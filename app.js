@@ -30,11 +30,13 @@ const resetGame = () => {
 const draw = () => {
     msg.innerText = `It's a Draw`;
     msgContainer.classList.remove("hide");
+    resetBtn.classList.add("hide");
 };
 
 const showWinner = (winner) => {
     msg.innerText = `Congratulations, Winner is ${winner}`;
     msgContainer.classList.remove("hide");
+    resetBtn.classList.add("hide");
 };
 
 const checkWinner = () => {
@@ -76,6 +78,7 @@ boxes.forEach((box) => {
 resetBtn.addEventListener("click", resetGame);
 
 newGameBtn.addEventListener("click", () => {
-    msgContainer.classList.add("hide");    
+    msgContainer.classList.add("hide"); 
+    resetBtn.classList.remove("hide");   
     resetGame();
 });
